@@ -6,53 +6,45 @@ const video1 = document.getElementById('video1');
 const video2 = document.getElementById('video2');
 const video3 = document.getElementById('video3');
 
-let noClickCount = 0;  // Contador de cuántas veces se hace clic en "No"
+const noMessages = [
+  "¿En serio no? 😱 ¡Lo intentaré más tarde!",
+  "¡Ay, qué triste! 😭",
+  "¡Te estoy esperando! 😘",
+  "¿No me amas? 🥺 ¡Lo intentaré de nuevo!",
+  "¡No puedes decirme que no! 💔😔"
+];
 
 yesButton.addEventListener('click', () => {
-  // Cambiar tamaño de los botones
-  yesButton.style.transform = 'scale(1.2)';
-  noButton.style.transform = 'scale(0.8)';
+  // Cambiar el tamaño de los botones
+  yesButton.classList.add('clicked');
+  noButton.classList.add('clicked');
 
-  // Mostrar el mensaje
+  // Mensaje de aceptación
   messageDiv.innerHTML = '¡Sabía que dirías que sí! Te amo mucho, amor 👻😍💗';
-  videoContainer.style.display = 'block';
 
-  // Reproducir videos
+  // Los vídeos siguen siendo visibles
+  videoContainer.style.display = 'flex';
+
+  // Reproducir los vídeos
   video1.style.display = 'block';
   video2.style.display = 'block';
   video3.style.display = 'block';
 });
 
 noButton.addEventListener('click', () => {
-  // Contar cuántas veces se presiona "No"
-  noClickCount++;
+  // Seleccionar un mensaje aleatorio de las opciones disponibles
+  const randomMessage = noMessages[Math.floor(Math.random() * noMessages.length)];
 
-  // Cambiar tamaño de los botones
-  yesButton.style.transform = 'scale(0.8)';
-  noButton.style.transform = 'scale(1.2)';
+  // Mostrar un mensaje de rechazo aleatorio
+  messageDiv.innerHTML = randomMessage;
 
-  // Mostrar un mensaje diferente dependiendo de cuántas veces se haga clic en "No"
-  switch (noClickCount) {
-    case 1:
-      messageDiv.innerHTML = '¿En serio no? 😱 ¡No te preocupes, lo intentaré más tarde!';
-      break;
-    case 2:
-      messageDiv.innerHTML = '¿No? ¿De verdad? 🤔 ¡Vas a arrepentirte!';
-      break;
-    case 3:
-      messageDiv.innerHTML = '¿Tercera vez que dices que no? 😅 ¡Aún así te quiero! 😍';
-      break;
-    case 4:
-      messageDiv.innerHTML = '¿No? ¡No es un "no" definitivo! 😜 ¡Lo intentaré más tarde!';
-      break;
-    default:
-      messageDiv.innerHTML = '¡¿En serio no?! ¡Este es un NO muy firme! 😆';
-      break;
-  }
+  // Los vídeos siguen siendo visibles, solo que no cambiará el mensaje
+  videoContainer.style.display = 'flex'; // Mantener el contenedor de vídeos visible
+  video1.style.display = 'block';
+  video2.style.display = 'block';
+  video3.style.display = 'block';
 
-  // Esconde los videos
-  videoContainer.style.display = 'none';
-  video1.style.display = 'none';
-  video2.style.display = 'none';
-  video3.style.display = 'none';
+  // Cambiar el tamaño de los botones
+  noButton.classList.add('clicked');
+  yesButton.classList.remove('clicked');
 });
