@@ -31,13 +31,14 @@ button:hover {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    display: none; /* Se oculta inicialmente */
 }
 
 .video {
     width: 100%;
     max-width: 500px;
     margin: 10px;
-    display: block;
+    display: none; /* Se oculta inicialmente */
 }
 
 #message {
