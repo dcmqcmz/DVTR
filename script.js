@@ -1,34 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
-    const backgroundVideo = document.getElementById("backgroundVideo");
+const yesButton = document.getElementById('yes');
+const noButton = document.getElementById('no');
+const messageDiv = document.getElementById('message');
+const videoContainer = document.getElementById('video-container');
+const video1 = document.getElementById('video1');
+const video2 = document.getElementById('video2');
+const video3 = document.getElementById('video3');
 
-    const noMessages = [
-        "¿En serio no? 😢",
-        "¿Estás segura? 🥺",
-        "Piénsalo bien...",
-        "Dale otra oportunidad 💖",
-        "Tómate tu tiempo... 🥰"
-      "enserio🤡"
-    ];
-    let noCount = 0;
+yesButton.addEventListener('click', () => {
+  // Cambiar tamaño de los botones
+  yesButton.style.transform = 'scale(1.2)';
+  noButton.style.transform = 'scale(0.8)';
 
-    noBtn.addEventListener("click", () => {
-        noCount++;
-        if (noCount < noMessages.length) {
-            alert(noMessages[noCount]);
-        } else {
-            alert("🤡😭");
-        }
+  // Mostrar el mensaje
+  messageDiv.innerHTML = '¡Sabía que dirías que sí! Te amo mucho, amor 👻😍💗';
+  videoContainer.style.display = 'block';
 
-        noBtn.style.fontSize = `${Math.max(14 - noCount, 8)}px`;
-        yesBtn.style.fontSize = `${15 + noCount}px`;
-    });
+  // Reproducir videos
+  video1.style.display = 'block';
+  video2.style.display = 'block';
+  video3.style.display = 'block';
+});
 
-    yesBtn.addEventListener("click", () => {
-        document.querySelector(".container").innerHTML = `
-            <h1>Sabía que dirías que sí, te amo mucho amor 👻😍💗</h1>
-        `;
-        backgroundVideo.src = "videos/video2.mp4"; // Video cuando dice "Sí"
-    });
+noButton.addEventListener('click', () => {
+  // Cambiar tamaño de los botones
+  yesButton.style.transform = 'scale(0.8)';
+  noButton.style.transform = 'scale(1.2)';
+
+  // Mostrar un mensaje diferente cuando se presiona no
+  messageDiv.innerHTML = '¿En serio no? Vuelve a intentarlo!';
+  videoContainer.style.display = 'none';
+
+  // Detener videos
+  video1.style.display = 'none';
+  video2.style.display = 'none';
+  video3.style.display = 'none';
 });
