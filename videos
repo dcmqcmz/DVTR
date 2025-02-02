@@ -1,0 +1,3 @@
+<video id="backgroundVideo" autoplay loop muted>
+    <source src="videos/video1.mp4" type="video/mp4">
+</video>
