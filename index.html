@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación San Valentín</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de San Valentín</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>¿Quieres ser mi San Valentín?</h1>
-        <div class="buttons">
-            <button id="yes" class="yes">Sí</button>
-            <button id="no" class="no">No</button>
-        </div>
-        <div id="videoContainer" class="video-container">
-            <video id="video1" src="videos/video1.mp4" class="video" autoplay muted></video>
-            <video id="video2" src="videos/video2.mp4" class="video" autoplay muted></video>
-            <video id="video3" src="videos/video3.mp4" class="video" autoplay muted></video>
-        </div>
+  <div class="container">
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <div class="buttons">
+      <button id="yes" class="btn">Sí</button>
+      <button id="no" class="btn">No</button>
     </div>
+    <div id="message"></div>
+    <div id="video-container">
+      <video id="video1" class="video" autoplay muted loop>
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+      <video id="video2" class="video" autoplay muted loop>
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+      <video id="video3" class="video" autoplay muted loop>
+        <source src="video3.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
