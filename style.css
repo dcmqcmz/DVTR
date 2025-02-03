@@ -1,57 +1,63 @@
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fce5cd;
-  margin: 0;
-}
-
-.container {
-  text-align: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    color: #333;
+    padding: 50px;
 }
 
 h1 {
-  font-size: 3em;
-  color: #ff4081;
-  margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ff69b4;
+    margin-bottom: 30px;
 }
 
-.buttons {
-  margin: 20px 0;
+button {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
 }
 
-.btn {
-  font-size: 1.2em;
-  padding: 10px 20px;
-  margin: 0 15px;
-  cursor: pointer;
-  background-color: #ff4081;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
-}
-
-.btn:active {
-  transform: scale(0.9);
-}
-
-#message {
-  margin-top: 20px;
-  font-size: 1.5em;
-  color: #ff4081;
+button:hover {
+    background-color: #ff1493;
 }
 
 #video-container {
-  margin-top: 20px;
-  display: none;
+    margin-top: 20px;
+    display: none;
+    text-align: center;
 }
 
 .video {
-  width: 100%;
-  max-width: 500px;
-  margin: 10px 0;
-  display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px 0;
+    display: block;
+}
+
+#message {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #ff1493;
+}
+
+#yes {
+    transition: transform 0.2s;
+}
+
+#no {
+    transition: transform 0.2s;
+}
+
+#no.clicked {
+    transform: scale(0.8);
+}
+
+#yes.clicked {
+    transform: scale(1.2);
 }
