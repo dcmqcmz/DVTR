@@ -14,8 +14,8 @@ yesButton.addEventListener('click', () => {
   // Mensaje de aceptación
   messageDiv.innerHTML = '¡Sabía que dirías que sí! Te amo mucho, amor 👻😍💗';
 
-  // Mostrar los vídeos
-  videoContainer.style.display = 'block';
+  // Los vídeos siguen siendo visibles
+  videoContainer.style.display = 'flex';
 
   // Reproducir los vídeos
   video1.style.display = 'block';
@@ -27,11 +27,11 @@ noButton.addEventListener('click', () => {
   // Mostrar un mensaje de rechazo
   messageDiv.innerHTML = '¿En serio no? 😱 ¡Lo intentaré más tarde!';
 
-  // Esconder los vídeos si se hace clic en No
-  videoContainer.style.display = 'none';
-  video1.style.display = 'none';
-  video2.style.display = 'none';
-  video3.style.display = 'none';
+  // Los vídeos siguen siendo visibles, solo que no cambiará el mensaje
+  videoContainer.style.display = 'flex'; // Mantener el contenedor de vídeos visible
+  video1.style.display = 'block';
+  video2.style.display = 'block';
+  video3.style.display = 'block';
 
   // Cambiar el tamaño de los botones
   noButton.classList.add('clicked');
