@@ -6,6 +6,14 @@ const video1 = document.getElementById('video1');
 const video2 = document.getElementById('video2');
 const video3 = document.getElementById('video3');
 
+const noMessages = [
+  "¿En serio no? 😱 ¡Lo intentaré más tarde!",
+  "¡Ay, qué triste! 😭",
+  "¡Te estoy esperando! 😘",
+  "¿No me amas? 🥺 ¡Lo intentaré de nuevo!",
+  "¡No puedes decirme que no! 💔😔"
+];
+
 yesButton.addEventListener('click', () => {
   // Cambiar el tamaño de los botones
   yesButton.classList.add('clicked');
@@ -24,8 +32,11 @@ yesButton.addEventListener('click', () => {
 });
 
 noButton.addEventListener('click', () => {
-  // Mostrar un mensaje de rechazo
-  messageDiv.innerHTML = '¿En serio no? 😱 ¡Lo intentaré más tarde!';
+  // Seleccionar un mensaje aleatorio de las opciones disponibles
+  const randomMessage = noMessages[Math.floor(Math.random() * noMessages.length)];
+
+  // Mostrar un mensaje de rechazo aleatorio
+  messageDiv.innerHTML = randomMessage;
 
   // Los vídeos siguen siendo visibles, solo que no cambiará el mensaje
   videoContainer.style.display = 'flex'; // Mantener el contenedor de vídeos visible
