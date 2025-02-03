@@ -1,64 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background-color: #ffe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
     text-align: center;
-    background-color: #f0f8ff;
-    color: #333;
-    padding: 50px;
 }
 
 h1 {
-    font-size: 2.5em;
-    color: #ff69b4;
+    font-size: 2.5rem;
+    color: #d64b5b;
+    margin-bottom: 20px;
+}
+
+.buttons {
     margin-bottom: 30px;
 }
 
 button {
-    font-size: 1.2em;
-    padding: 15px 30px;
-    background-color: #ff69b4;
+    background-color: #ff6b6b;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
     cursor: pointer;
-    margin: 10px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #ff1493;
+    background-color: #ff4f4f;
 }
 
-#video-container {
+button:active {
+    transform: scale(0.95);
+}
+
+.yes {
+    background-color: #44b3e3;
+}
+
+.yes:hover {
+    background-color: #35a4d3;
+}
+
+.video-container {
+    display: none;
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    display: none; /* Se oculta inicialmente */
 }
 
 .video {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 10px;
-    display: none; /* Se oculta inicialmente */
+    display: block;
 }
 
-#message {
-    font-size: 1.5em;
-    margin-top: 20px;
-    color: #ff1493;
-}
-
-#yes {
-    transition: transform 0.2s;
-}
-
-#no {
-    transition: transform 0.2s;
-}
-
-#no.clicked {
-    transform: scale(0.8);
-}
-
-#yes.clicked {
-    transform: scale(1.2);
-}
