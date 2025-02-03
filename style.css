@@ -29,15 +29,16 @@ button:hover {
 
 #video-container {
     margin-top: 20px;
-    display: none;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    display: none; /* Se oculta inicialmente */
 }
 
 .video {
     width: 100%;
     max-width: 500px;
-    margin: 10px 0;
-    display: block;
+    margin: 10px;
+    display: none; /* Se oculta inicialmente */
 }
 
 #message {
